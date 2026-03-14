@@ -6,8 +6,31 @@
     <title>Document</title>
   </head>
   <body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
 
     <h3>Hello, World!</h3>
+
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+        }
+    </style>
+
+    <script>
+        console.log('Hello, World!');
+        const myCanvas = document.getElementById('myCanvas');
+        const canvasContext = myCanvas.getContext('2d');
+        console.log('Canvas context:', canvasContext);
+        document.addEventListener('click', (event) => {
+            console.log('Document clicked!');
+                console.log('X:', event.clientX, 'Y:', event.clientY);
+            canvasContext.fillStyle = 'blue';
+            canvasContext.fillRect(event.clientX - 5, event.clientY - 5, 10, 10);
+
+        });
+
+
+    </script>
     <script src="./index.js"></script>
   </body>
 </html>
